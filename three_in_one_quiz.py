@@ -38,29 +38,29 @@ again = 'yes'
 while again == 'yes':
     score = 0 
 
-    questions = str.lower(input('\nWelcome! Which quiz do you want to take? \nA: Quiz about animals \nB: A math quiz \nC: A disney quiz \nAnswer: '))
+    user_choice = str.lower(input('\nWelcome! Which quiz do you want to take? \nA: Quiz about animals \nB: A math quiz \nC: A disney quiz \nAnswer: '))
 
-    if questions == 'a':
-        questions = animal
-    elif questions == 'b':
-        questions = math
+    if user_choice == 'a':
+        user_choice = animal
+    elif user_choice == 'b':
+        user_choice = math
     else:
-        questions = disney
+        user_choice = disney
 
-    for q in questions:
-        answer = input(q[0]).lower()
-        if answer in q[1:]:
+    for u in user_choice:
+        answer = input(u[0]).lower()
+        if answer in u[1:]:
             print('\nCorrect! \n')
             score += 1
         else:
             print('\nIncorrect \n')
 
-    if score > len(questions)/2:
-        print('Congratulations! \nYou got', str(score), 'out of', len(questions), 'It means that you got ', str(score / len(questions) * 100), '%', ' of all questions correct! \n')
+    if score > len(user_choice)/2:
+        print('Congratulations! \nYou got', str(score), 'out of', len(user_choice), 'It means that you got ', str(score / len(user_choice) * 100), '%', ' of all user_choice correct! \n')
     else:
-        print('You got', str(score), 'out of', len(questions), 'answers correct.. ', '\nIt means that you only got ', str(score / len(questions) * 100), '%', 'of all questions correct.. \nI am sorry, better luck next time! \n')
+        print('You got', str(score), 'out of', len(user_choice), 'answers correct.. ', '\nIt means that you only got ', str(score / len(user_choice) * 100), '%', 'of all user_choice correct.. \nI am sorry, better luck next time! \n')
     
-    again = input('Do you want to try an another quiz? \nAnswer: ').lower()
-    if again == 'no':
+    again = input('Do you want to try an another quiz? (yes/no) \nAnswer: ').lower()
+    if again != 'yes':
         print('Okay, good bye! \n')
         break
